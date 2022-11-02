@@ -1,0 +1,7 @@
+htmlspecialchars()
+strip_tags()
+
+addslashes()
+htmlspecialchars($row["text"], ENT_QUOTES)
+htmlspecialchars($_GET['username'])
+

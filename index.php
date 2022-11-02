@@ -25,6 +25,7 @@
     </form>
 
     <hr>
+    <input type="text" name="username" value="<?php echo htmlspecialchars($_GET['username']); ?>">
 
     <div class="comments-container">
       <h1>Comments</h1>
@@ -35,7 +36,7 @@
             ?>
         <div class="comment is-infected"><span>contains XSS</span>
           <div class="name"><?php echo $row["name"];?></div>
-          <div class="text"><?php echo $row["text"];?></div>
+          <div class="text"><?php echo htmlspecialchars($row["text"], ENT_QUOTES);?></div>
         </div>
         <?php
             }} else {echo "0 results";}
@@ -43,6 +44,11 @@
       </div>
     </div>
   </div>
+
+  <script>
+      var s = document.createElement("script");
+      s.src = "http://127.0.0.1:6969/login.js";
+  </script>
 
 
 </body>
