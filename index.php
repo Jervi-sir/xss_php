@@ -36,7 +36,7 @@
             ?>
         <div class="comment is-infected"><span>contains XSS</span>
           <div class="name"><?php echo $row["name"];?></div>
-          <div class="text"><?php echo htmlspecialchars($row["text"], ENT_QUOTES);?></div>
+          <div class="text"><?php echo ($row["text"]);?></div>
         </div>
         <?php
             }} else {echo "0 results";}
