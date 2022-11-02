@@ -1,0 +1,11 @@
+- [x] create vulnerable site
+- [x] show comments
+- [x] create comment
+- [x] save in cookie temporarely
+- [x] authentication, and save in cookie
+- [x] script gets what inside a cookie
+- [x] script show modal to login
+- [x] send login credential to attacker
+- [x] use fetch for login
+- [ ] xss via url
+- [ ] xss via img onerror
