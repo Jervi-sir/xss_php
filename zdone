@@ -7,5 +7,6 @@
 - [x] script show modal to login
 - [x] send login credential to attacker
 - [x] use fetch for login
+- [x] attacker get cookies
 - [ ] xss via url
 - [ ] xss via img onerror

