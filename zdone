@@ -10,3 +10,4 @@
 - [x] attacker get cookies
 - [ ] xss via url
 - [ ] xss via img onerror
+- [ ] prevention
