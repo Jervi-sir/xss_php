@@ -16,34 +16,81 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>attacker</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 <body>
-  <h1>Users</h1>
-  <?php
-    if ($resultUsers->num_rows > 0) {
-      while($row = $resultUsers->fetch_assoc()) {
-        ?>
-    <div class="comment is-infected">
-      <div class="name"><?php echo htmlspecialchars($row["name"]);?></div> - 
-      <div class="text"><?php echo htmlspecialchars($row["password"], ENT_QUOTES);?></div>
-    </div>
-    <?php
-        }} else {echo "0 results";}
-    ?>
-  <h1>Cookies</h1>
-<?php
-    if ($resultCookies->num_rows > 0) {
-      while($row = $resultCookies->fetch_assoc()) {
-        ?>
-    <div class="comment is-infected"><span>contains XSS</span>
-      <div class="name"><?php echo htmlspecialchars($row["client"]);?></div> - 
-      <div class="text"><?php echo htmlspecialchars($row["content"], ENT_QUOTES);?></div>
-    </div>
-    <?php
-        }} else {echo "0 results";}
-    ?>
 
-  
+<div class="container mx-auto py-6 px-4">
+<h1 class="text-3xl font-bold underline">
+Users
+</h1>
+<table class="border-collapse table-auto w-full whitespace-no-wrap bg-white table-striped relative">
+  <thead>
+    <tr class="text-left">
+      <th class="py-2 px-3 sticky top-0 border-b border-gray-200 bg-gray-100">
+      Name 
+      </th>
+      <th class="py-2 px-3 sticky top-0 border-b border-gray-200 bg-gray-100">
+      Password  
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php
+      if ($resultUsers->num_rows > 0) {
+        while($row = $resultUsers->fetch_assoc()) {
+          ?>
+      <tr>
+        <td class="border-dashed border-t border-gray-200 px-3">
+          <?php echo htmlspecialchars($row["name"]);?>
+        </td>
+        <td class="border-dashed border-t border-gray-200 userId">
+          <?php echo htmlspecialchars($row["password"]);?>
+        </td>
+      </tr>
+      <?php
+          }} else {echo "0 results";}
+      ?>
+  </tbody>
+</table>
+</div>
+
+<div class="container mx-auto py-6 px-4">
+<h1 class="text-3xl font-bold underline">
+Cookies
+</h1>
+<table class="border-collapse table-auto w-full whitespace-no-wrap bg-white table-striped relative">
+  <thead>
+    <tr class="text-left">
+      <th class="py-2 px-3 sticky top-0 border-b border-gray-200 bg-gray-100">
+      Client IP  
+      </th>
+      <th class="py-2 px-3 sticky top-0 border-b border-gray-200 bg-gray-100">
+      Cookies  
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php
+      if ($resultCookies->num_rows > 0) {
+        while($row = $resultCookies->fetch_assoc()) {
+          ?>
+      <tr>
+        <td class="border-dashed border-t border-gray-200 px-3">
+          <?php echo htmlspecialchars($row["client"]);?>
+        </td>
+        <td class="border-dashed border-t border-gray-200 userId">
+          <?php echo htmlspecialchars($row["content"]);?>
+        </td>
+      </tr>
+      <?php
+          }} else {echo "0 results";}
+      ?>
+  </tbody>
+</table>
+</div>
+
 </body>
 </html>
